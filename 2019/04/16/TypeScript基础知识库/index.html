@@ -42,6 +42,8 @@
     
 
 
+    <link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+
 
 <link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
 <link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
@@ -63,6 +65,21 @@
 
 
     
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
 
 </head>
 
@@ -165,6 +182,11 @@
             <span class="date-meta">2019/04/16</span>
         </span>
         
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
     
 </div>
             
@@ -200,28 +222,20 @@
 
     <div id="comments">
         
-	
-    <div id="vcomments" class="valine"></div>
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="/assets/valine.min.js"></script>
-
-    <script>
-        new Valine({
-            av: AV,
-            el: '#vcomments',
-            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
-            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
-            placeholder: '说点什么吧',
-            notify: false,
-            verify: false,
-            avatar: 'mm',
-            meta: 'nick,mail'.split(','),
-            pageSize: '10',
-            path: window.location.pathname,
-            lang: ''.toLowerCase()
-        })
-    </script>
-
+	<script type="text/javascript" src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+        id: window.location.pathname,
+        owner:"dolashink",
+        repo:"dolashink.github.io",
+        oauth: {
+          client_id:"6fccc7f17af9be85d187",
+          client_secret:"ea1a163ced5cf0732cc8e2b0547863dd5f58db49"
+        },
+        perPage:"10",
+    });
+    gitment.render('comments');
+</script>
 
     </div>
 
@@ -264,6 +278,16 @@
             <div class="col-sm-12">
                 <div class="busuanzi">
     
+        Total:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        Visitors:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
 </div>
 
             </div>
@@ -285,6 +309,8 @@
 
 
 
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 <script src="/js/app.js?rev=@@hash"></script>
